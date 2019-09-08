@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>diy homepage</title>
+</head>
+<body bgcolor = "#161F25">
+<font color="E8EBEC" size = "10"><B><div style = "padding-left:5%; padding-top:5%;">Welcome, this is diy homepage!</div></B></font>
+<br/>
+<h3><font color="#B5C0C2" size = "6"><div style = "padding-left:7.5%">Please input identifier.</div></font></h3>
+<form action = '{% url 'namespace_classifier:namespace_diy:name_classifyResult' %}' method = 'post'>
+    {% csrf_token %}
+    <div style = "padding-left:9%">
+    <font color="#B5C0C2" size = "4.5">
+
+    <label>identifier
+        <input type = 'text' name = 'identifier' value = 1 />
+    </label>
+    <br/>
+
+    <br/><input type = 'submit' value = 'Submit' style = "font-size:20px"/>
+    </font>
+    </div>
+</form>
+<br>
+<div style = "padding-left:9%"><font color="#B5C0C2" size = "6">
+{% load static %}
+    Sample 01-05&nbsp
+<img src="{% static "1.png" %}" alt="Sample 01">&nbsp
+<img src="{% static "2.png" %}" alt="Sample 02">&nbsp
+<img src="{% static "3.png" %}" alt="Sample 03">&nbsp
+<img src="{% static "4.png" %}" alt="Sample 04">&nbsp
+<img src="{% static "5.png" %}" alt="Sample 05">&nbsp
+    <br>
+    Sample 06-10&nbsp
+<img src="{% static "6.png" %}" alt="Sample 06">&nbsp
+<img src="{% static "7.png" %}" alt="Sample 07">&nbsp
+<img src="{% static "8.png" %}" alt="Sample 08">&nbsp
+<img src="{% static "9.png" %}" alt="Sample 09">&nbsp
+<img src="{% static "10.png" %}" alt="Sample 10">&nbsp
+    <br>
+    Sample 11-15&nbsp&nbsp
+<img src="{% static "11.png" %}" alt="Sample 11">&nbsp
+<img src="{% static "12.png" %}" alt="Sample 12">&nbsp
+<img src="{% static "13.png" %}" alt="Sample 13">&nbsp
+<img src="{% static "14.png" %}" alt="Sample 14">&nbsp
+<img src="{% static "15.png" %}" alt="Sample 15">&nbsp
+    <br>
+    Sample 16-20&nbsp
+<img src="{% static "16.png" %}" alt="Sample 16">&nbsp
+<img src="{% static "17.png" %}" alt="Sample 17">&nbsp
+<img src="{% static "18.png" %}" alt="Sample 18">&nbsp
+<img src="{% static "19.png" %}" alt="Sample 19">&nbsp
+<img src="{% static "20.png" %}" alt="Sample 20">&nbsp
+    <br>
+    Sample 21-25&nbsp
+<img src="{% static "21.png" %}" alt="Sample 21">&nbsp
+<img src="{% static "22.png" %}" alt="Sample 22">&nbsp
+<img src="{% static "23.png" %}" alt="Sample 23">&nbsp
+<img src="{% static "24.png" %}" alt="Sample 24">&nbsp
+<img src="{% static "25.png" %}" alt="Sample 25">&nbsp
+    <br>
+<br>
+</font></div>
+<footer style="position:absolute; bottom:0;"><font color="B5C0C2" size = "3">Copyrights @ Zihan Rubio</font></footer>
+</body>
+</html>

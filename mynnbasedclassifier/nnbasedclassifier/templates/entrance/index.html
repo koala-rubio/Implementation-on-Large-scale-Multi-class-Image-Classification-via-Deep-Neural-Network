@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>homepage</title>
+</head>
+<body bgcolor = "#161F25">
+<font color="E8EBEC" size = "10"><B><div style = "padding-left:5%; padding-top:5%;">Welcome, this is root homepage!</div></B></font>
+<br/>
+<h3><font color="#B5C0C2" size = "6"><div style = "padding-left:7.5%">Please choose a dataset.</div></font></h3>
+<form action = '{% url 'namespace_classifier:name_datasetChoose' %}' method = 'post'>
+    {% csrf_token %}
+    <div style = "padding-left:9%">
+    <font color="#B5C0C2" size = "4.5">
+    <input type = 'radio' name = 'da_type' value = 'MNIST' checked=""/> MNIST<br/>
+    <input type = 'radio' name = 'da_type' value = 'CIFAR10' /> CIFAR10<br/>
+    <input type = 'radio' name = 'da_type' value = 'DIY' /> DIY<br/><br/>
+    <input type = 'submit' value = 'Submit' style = "font-size:20px"/>
+    </font>
+    </div>
+</form>
+{% load static %}
+<img src="{% static "index_cover.jpg" %}" alt="Sample Display">
+<br>
+<footer><font color="B5C0C2" size = "3">Copyrights @ Zihan Rubio</font></footer>
+</body>
+</html>
+

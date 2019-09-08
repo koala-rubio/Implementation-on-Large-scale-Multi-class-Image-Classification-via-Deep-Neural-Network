@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>parameter for mnist</title>
+</head>
+<body bgcolor = "#161F25">
+<font color="E8EBEC" size = "10"><B><div style = "padding-left:5%; padding-top:5%;">Welcome, this is parameter setting page for dataset mnist.</div></B></font>
+<br/>
+<h3><font color="#B5C0C2" size = "6"><div style = "padding-left:7.5%">Please input following parameters for {{ nn_type }}.</div></font></h3>
+<form action = '{% url 'namespace_classifier:namespace_mnist:name_hitRate' %}' method = 'post'>
+    {% csrf_token %}
+    <div style = "padding-left:9%">
+    <font color="#B5C0C2" size = "4.5">
+    <input type = 'hidden' name = 'nn_type' value = '{{ nn_type | default:'BP' }}'/>
+    {% if nn_type == 'BP' %}
+        <label>learning_rate
+            <input type = 'text' name = 'learning_rate' value = 0.5 />
+        </label>
+        <br/>
+    {% endif %}
+    {% if nn_type != 'BP' %}
+        <label>learning_rate
+            <input type = 'text' name = 'learning_rate' value = 0.001 />
+        </label>
+        <br/>
+    {% endif %}
+
+    <label>training_epochs
+        <input type = 'text' name = 'training_epochs' value = 5 />
+    </label>
+    <br/>
+
+    <label>batch_size
+        <input type = 'text' name = 'batch_size' value = 100 />
+    </label>
+    <br/>
+
+    <label>display_step
+        <input type = 'text' name = 'display_step' value = 1 />
+    </label>
+    <br/>
+
+    <br/><input type = 'submit' value = 'Submit' style = "font-size:20px"/>
+    </font>
+    </div>
+</form>
+<br>
+<footer style="position:absolute; bottom:0;"><font color="B5C0C2" size = "3">Copyrights @ Zihan Rubio</font></footer>
+</body>
+</html>

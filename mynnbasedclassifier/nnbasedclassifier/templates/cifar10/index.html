@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cifar10 homepage</title>
+</head>
+<body bgcolor = "#161F25">
+<font color="E8EBEC" size = "10"><B><div style = "padding-left:5%; padding-top:5%;">Welcome, this is cifar10 homepage!</div></B></font>
+<br/>
+<h3><font color="#B5C0C2" size = "6"><div style = "padding-left:7.5%">Please input following parameters for CNN.</div></font></h3>
+<form action = '{% url 'namespace_classifier:namespace_cifar10:name_hitRate' %}' method = 'post'>
+    {% csrf_token %}
+    <div style = "padding-left:9%">
+    <font color="#B5C0C2" size = "4.5">
+
+    <label>training_images_each_epoch
+        <input type = 'text' name = 'training_num_each_epoch' value = 50000 />
+    </label>
+    <br/>
+
+    <label>training_epochs
+        <input type = 'text' name = 'training_epochs' value = 5 />
+    </label>
+    <br/>
+
+    <label>batch_size
+        <input type = 'text' name = 'batch_size' value = 100 />
+    </label>
+    <br/>
+
+    <label>display_step
+        <input type = 'text' name = 'display_step' value = 1 />
+    </label>
+    <br/>
+
+    <br/><input type = 'submit' value = 'Submit' style = "font-size:20px"/>
+    </font>
+    </div>
+</form>
+<br>
+<footer style="position:absolute; bottom:0;"><font color="B5C0C2" size = "3">Copyrights @ Zihan Rubio</font></footer>
+</body>
+</html>

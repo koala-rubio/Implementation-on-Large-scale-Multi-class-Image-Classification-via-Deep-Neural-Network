@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>accuracy display</title>
+</head>
+<body bgcolor = "#161F25">
+<font color="E8EBEC" size = "10"><B><div style = "padding-left:5%; padding-top:5%;">Welcome, this is accuracy display page for dataset cifar10.</div></B></font>
+<font color="B5C0C2" size = "5"><B><div style = "padding-left:7.5%; padding-top:5%;">
+    {% for item in s %}
+    {{ item }}<br>
+    {% endfor %}
+</div></B></font>
+<br><br>
+
+<div style = "padding-left:5%; padding-top:5%;"><a href="{% url 'namespace_classifier:name_index' %}" style = "color:#CBEB3C; size = "6"">Back to homepage >>></a></div>
+<br>
+<footer><font color="B5C0C2" size = "3">Copyrights @ Zihan Rubio</font></footer>
+</body>
+</html>

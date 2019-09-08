@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>accuracy display</title>
+</head>
+<body bgcolor = "#161F25">
+<font color="E8EBEC" size = "10"><B><div style = "padding-left:5%; padding-top:5%;">Welcome, this is accuracy display page for dataset mnist.</div></B></font>
+<font color="B5C0C2" size = "5"><B><div style = "padding-left:7.5%; padding-top:5%;">
+    {% for item in s %}
+    {{ item }}<br>
+    {% endfor %}
+</div></B></font>
+<br><br>
+
+<!-- Container -->
+<div id="main" style="height:400px"></div>
+<!-- ECharts单文件引入 -->
+<script src="http://echarts.baidu.com/build/dist/echarts.js"></script>
+<script type="text/javascript">
+    require.config({
+        paths: {
+            echarts: 'http://echarts.baidu.com/build/dist'
+        }
+    });
+
+    // 使用
+    require(
+        [
+            'echarts',
+            'echarts/chart/bar'
+        ],
+        function (ec) {
+            var myChart = ec.init(document.getElementById('main'));
+
+            var option = {
+                title: {
+                    text: 'Accuracy Result Display ( Epoch = 5 )',
+                    textStyle:{
+                        color: '#B5C0C2',
+                        fontWeight: 'bold',
+                        fontSize: 32
+                    }
+                },
+                tooltip: {
+                    show: true
+                },
+                legend: {
+                    data:['Accuracy Rate'],
+                    textStyle:{
+                        color: '#B5C0C2',
+                        fontSize: 24
+                    }
+                },
+                xAxis : [
+                    {
+                        type : 'category',
+                        data : ["BP","CNN","CNN_SIGMOID","CNN_DROPOUT","CNN_ARCH","DNN","ANN"],
+                        axisLabel : {
+                            formatter: '{value}',
+                            textStyle: {
+                                color: '#B5C0C2',
+                                fontSize: 18
+                            }
+                        }
+                    }
+                ],
+                yAxis : [
+                    {
+                        scale : true,
+                        min : 'dataMin',
+                        max : 'dataMax',
+                        type : 'value',
+                        axisLabel : {
+                            formatter: '{value}',
+                            textStyle: {
+                                color: '#B5C0C2',
+                                fontSize: 24
+                            }
+                        }
+                    }
+                ],
+                series : [
+                    {
+                        "name":"Accuracy Rate",
+                        "type":"bar",
+                        itemStyle:{
+                            normal:{
+                                barStyle:{
+                                    color:'#B5C0C2'
+                                }
+                            }
+                        },
+                        "data":[0.9212, 0.9622, 0.7605, 0.9739, 0.9919, 0.9726, 0.9063]
+                    }
+                ]
+            };
+
+            myChart.setOption(option);
+        }
+    );
+</script>
+
+<div style = "padding-left:5%; padding-top:5%;"><a href="{% url 'namespace_classifier:name_index' %}" style = "color:#CBEB3C; size = "6"">Back to homepage >>></a></div>
+<br>
+<footer><font color="B5C0C2" size = "3">Copyrights @ Zihan Rubio</font></footer>
+</body>
+</html>
