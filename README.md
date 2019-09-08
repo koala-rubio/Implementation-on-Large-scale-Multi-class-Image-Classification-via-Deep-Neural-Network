@@ -8,7 +8,7 @@ Firstly, the basic principles of several classical deep neural networks and thei
 
 Finally, based on the neural network model designed above, a prototype system for handwritten digital image classification is implemented. The prototype system can visually display the whole process of image classification based on neural network, process control and result display.
 
-![Django-Infrastructure](https://github.com/koala-rubio/Implementation-on-Large-scale-Multi-class-Image-Classification-via-Deep-Neural-Network/blob/master/images/Django-Infrastructure.png)
+![Django-Infrastructure](https://github.com/koala-rubio/Implementation-on-Large-scale-Multi-class-Image-Classification-via-Deep-Neural-Network/blob/master/images/Django-Infrastructure.jpg)
 Django-Infrastructure
 
 ![Index](https://github.com/koala-rubio/Implementation-on-Large-scale-Multi-class-Image-Classification-via-Deep-Neural-Network/blob/master/images/Index.png)
